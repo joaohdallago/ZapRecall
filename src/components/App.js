@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Home from "./Home";
+import LogoMini from "./LogoMini";
 
 
 export default function App() {
@@ -10,7 +11,12 @@ export default function App() {
     <>
       {
         screen ?
-        screen 
+        (
+          <>
+            <LogoMini />
+            {screen}
+          </>
+        )
         :
         <Home setScreen={setScreen}/>
       }

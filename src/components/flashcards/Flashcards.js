@@ -1,5 +1,10 @@
+import Flashcard from "./Flashcard"
+
 export default function Flashcards() {
     return (
-        <h1>flashcards</h1>
+
+        <div className='container'>
+            <Flashcard />
+        </div>
     )
 }
