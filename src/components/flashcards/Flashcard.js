@@ -1,18 +1,21 @@
 import { useState } from "react"
 
+import TurnButton from "./TurnButton";
 import AnswerButtons from "./AnswerButtons";
 
 export default function Flashcard() {
     const [isTurned, setIsTurned] = useState(false)
     const [asnwerData, setAnswerData] = useState({isAnswered: false, borderColor: ''})
-    //const [isPassed, setIsPassed] = useState(false)
+    const [isPassed, setIsPassed] = useState(false)
 
     const {isAnswered, borderColor} = asnwerData;
 
     return (
         <div className={`
-            flashcard ${isTurned && 'turned'}
+            flashcard
+            ${isTurned && 'turned'}
             ${isAnswered && `answered ${borderColor}`}
+            ${isPassed && 'passed'}
         `}>
             <div class="back-face face">
                 <div className='flashcard-counter'>
@@ -23,9 +26,7 @@ export default function Flashcard() {
                     O que é JSX?
                 </span>
 
-                <button className='turn-button' onClick={() => setIsTurned(true)}>
-                    <img src='assets/turn.png'/>
-                </button>
+                <TurnButton onClick={() => setIsTurned(true)}/>
             </div>
             <div class="front-face face">
                 <span>
@@ -42,9 +43,7 @@ export default function Flashcard() {
                 
                 {
                     isAnswered ?
-                    <button className='turn-button'>
-                        <img src='assets/turn.png'/>
-                    </button>
+                    <TurnButton onClick={() => setIsPassed(true)}/>
                     :
                     <AnswerButtons setAnswerData={setAnswerData}/>
                 }
