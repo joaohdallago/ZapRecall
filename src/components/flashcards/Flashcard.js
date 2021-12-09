@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import AnswerButtons from "./answer-buttons/AnswerButtons";
+import AnswerButtons from "./AnswerButtons";
 
 export default function Flashcard() {
     const [isTurned, setIsTurned] = useState(false)
