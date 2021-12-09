@@ -64,6 +64,10 @@ body {
     align-items: center;
 }
 
+.container-flashcard {
+    position: absolute;
+}
+
 .flashcard {
     position: relative;
 
@@ -176,7 +180,7 @@ body {
     border: 5px solid #000
 }
 
-.flashcard.turned.answered.passed {
+.container-flashcard.passed {
     margin: 1500px 1000px 0 0;
 
     transform: rotateZ(-150deg);

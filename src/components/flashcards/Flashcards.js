@@ -1,10 +1,23 @@
 import Flashcard from "./Flashcard"
 
 export default function Flashcards() {
-    return (
+    const flashcardList = [
+        {
+            question: 'O que é JSX?',
+            answer: 'Uma extensão de linguagem do JavaScript',
+            counter: '2/8'
+        },
 
+        {
+            question: 'O que é JSX?',
+            answer: 'Uma extensão de linguagem do JavaScript',
+            counter: '1/8'
+        }
+    ]
+
+    return (
         <div className='container'>
-            <Flashcard />
+            {flashcardList.map(flashcardData => <Flashcard flashcardData={flashcardData}/>)}
         </div>
     )
 }
