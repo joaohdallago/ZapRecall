@@ -1,13 +1,13 @@
-export default function AnswerButtons({ setAnswerData }) {
+export default function AnswerButtons({ flashcardClasses, setFlashcardClasses }) {
     return (
                 <div className='answer-buttons'>
-                    <button onClick={() => setAnswerData({isAnswered: true, borderColor: ''})}>Aprendi agora</button>
+                    <button onClick={() => setFlashcardClasses([...flashcardClasses, 'answered'])}>Aprendi agora</button>
                     
-                    <button className='border-red' onClick={() => setAnswerData({isAnswered: true, borderColor: 'border-red'})}>Não lembrei</button>
+                    <button className='border-red' onClick={() => setFlashcardClasses([...flashcardClasses, 'answered', 'border-red'])}>Não lembrei</button>
 
-                    <button className='border-green' onClick={() => setAnswerData({isAnswered: true, borderColor: 'border-green'})}>Lembrei com esforço</button>
+                    <button className='border-green' onClick={() => setFlashcardClasses([...flashcardClasses, 'answered', 'border-green'])}>Lembrei com esforço</button>
                     
-                    <button className='border-yellow' onClick={() => setAnswerData({isAnswered: true, borderColor: 'border-yellow'})}>Zap!</button>
+                    <button className='border-yellow' onClick={() => setFlashcardClasses([...flashcardClasses, 'answered', 'border-yellow'])}>Zap!</button>
                 </div>
     )
 }
