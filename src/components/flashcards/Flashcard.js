@@ -18,14 +18,14 @@ export default function Flashcard({ flashcardData }) {
                     </div>
 
                     <span>
-                        O que é JSX?
+                        {question}
                     </span>
 
                     <TurnButton onClick={() => setFlashcardClasses([...flashcardClasses, 'turned'])}/>
                 </div>
                 <div class="front-face face">
                     <span>
-                        O que é JSX?
+                        {question}
                     </span>
 
                     <div className='flashcard-counter'>
@@ -33,7 +33,7 @@ export default function Flashcard({ flashcardData }) {
                     </div>
 
                     <p>
-                        Uma extensão de linguagem do JavaScript
+                        {answer}
                     </p>
                     
                     {
