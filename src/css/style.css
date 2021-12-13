@@ -132,6 +132,8 @@ body {
 }
 
 .front-face span {
+    width: 75%;
+
     position: absolute;
     top: 11px;
 
@@ -186,6 +188,28 @@ body {
     transform: rotateZ(-150deg);
 
     transition: ease-in .8s;
+}
+
+.final-result{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.final-result span {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: bold;
+}
+
+.final-result p {
+    font-size: 22px;
+    line-height: 26px;
 }
 
 /*::::::::::::::::SUPPORT::::::::::::::::*/

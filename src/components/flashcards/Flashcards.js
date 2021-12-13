@@ -1,6 +1,14 @@
+import { useState } from 'react';
+
 import Flashcard from "./Flashcard"
+import FinalResult from '../final-result/FinalResult';
 
 export default function Flashcards() {
+    const userAnswersListState = useState([])
+
+    const [userAnswersList, setUserAnswersList] = userAnswersListState;
+    console.log(userAnswersList)
+
     const flashcardList = [
         {
             question: 'Usamos estado (state) para __',
@@ -51,9 +59,18 @@ export default function Flashcards() {
         }
     ]
 
+    
+
     return (
-        <div className='container'>
-            {flashcardList.map(flashcardData => <Flashcard flashcardData={flashcardData}/>)}
-        </div>
+        <>
+            {
+                userAnswersList.length === flashcardList.length ?
+                <FinalResult userAnswersList={userAnswersList}/>
+                :
+                <div className='container'>
+                    {flashcardList.map(flashcardData => <Flashcard flashcardData={flashcardData} userAnswersListState={userAnswersListState} />)}
+                </div>
+            }
+        </>
     )
 }
